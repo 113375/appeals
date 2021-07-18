@@ -1,0 +1,54 @@
+/*Стили для главной страницы*/
+
+.regular-text{
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.button-block{
+    text-align: center;
+}
+.image-block{
+    width: 50%;
+}
+
+.points{
+    margin-top: 60px; 
+    padding-left: 180px;
+    padding-right: 55px;
+}
+
+.points-block{
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.header-point-text{
+    font-size: 24px;
+    padding-left: 5px;
+    padding-bottom: 20px;
+
+}
+
+.regular-point-text{
+    font-size: 18px;
+}
+
+.text-point-block{
+    padding: 12px 20px 12px 40px;
+    width: 100%;
+}
+
+.text-point-block.purple{
+    background-color: rgba(90, 0, 236, 0.137);
+}
+
+.text-point-block.green{
+    background-color: rgba(0, 236, 39, 0.137);
+}
+
+.icon{
+    padding: 20px;
+    
+}
+
