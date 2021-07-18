@@ -125,7 +125,11 @@
                     </div>
             </div>
         </div>
-
+        <div class="button-block">
+            <div class="button-to-appeals button purple bottom-button">
+                Подать обращение
+            </div>
+        </div>
        
 
         <?php require "templates/footer.php"?>
