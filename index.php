@@ -43,7 +43,9 @@
         <div class="points">
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/test.png" alt="">
+                    <div class="image">
+                        <img src="icons/map.png" alt="">
+                    </div>
                 </div>
                 <div class="text-point-block purple">
                     <div class="header-point-text">
@@ -57,7 +59,7 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/test.png" alt="">
+                    <img src="icons/list.png" alt="">
                 </div>
                 <div class="text-point-block green">
                     <div class="header-point-text">
@@ -71,7 +73,7 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/test.png" alt="">
+                    <img src="icons/keyboard.png" alt="">
                 </div>
                 <div class="text-point-block purple">
                     <div class="header-point-text">
@@ -85,7 +87,7 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/test.png" alt="">
+                    <img src="icons/photo.png" alt="">
                 </div>
                 <div class="text-point-block green">
                     <div class="header-point-text">
@@ -99,7 +101,7 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/test.png" alt="">
+                    <img src="icons/person.png" alt="">
                 </div>
                 <div class="text-point-block purple">
                     <div class="header-point-text">
@@ -113,7 +115,7 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/test.png" alt="">
+                    <img src="icons/letter.png" alt="">
                 </div>
                 <div class="text-point-block green">
                     <div class="header-point-text">

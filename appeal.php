@@ -26,8 +26,10 @@
             
             </div>
         </div>
+        <div class="points">
+            
+        </div>
 
-        <div style="height: 400px"></div>
         <?php require "templates/footer.php"?>
 
     </div>

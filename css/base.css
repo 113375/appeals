@@ -79,9 +79,14 @@ body{
     padding: 10px;
 }
 
-img{
-    width: 80px;
-    
+.icon img{
+    width: 65px;
+    height: 65px;
+}
+.points{
+    margin-top: 60px; 
+    padding-left: 180px;
+    padding-right: 55px;
 }
 
 /* Стили кнопок*/
