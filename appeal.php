@@ -27,7 +27,8 @@
         <div class="points appeal">
             <!-- Поля для формы-->
             <div class="points-block-appeal">
-                <div class="icon ">
+                <!--выбор района-->
+                 <div class="icon "> 
                     <div class="image purple">
                         <img src="icons/map.png" alt="">
                     </div>
@@ -35,9 +36,15 @@
                 <div class="appeal-margin-left appeal-button button purple list">
                     Выбрать район
                 </div>
+                <div class="appeal-margin-left appeal-choice-text">
+                    <!-- То, что было выбрано-->
+                    Измайлово
+                </div>
             </div>
 
             <div class="points-block-appeal">
+                <!-- выбор темы-->
+
                 <div class="icon">
                     <div class="image green little">
                         <img src="icons/list.png" alt="">
@@ -46,9 +53,13 @@
                 <div class="appeal-margin-left appeal-button button green list">
                     Выбрать тему обращения
                 </div>
+                <div class="appeal-margin-left appeal-choice-text">
+                    <!-- То, что было выбрано-->
+                </div>
             </div>
 
             <div class="points-block-appeal">
+                <!-- выбор адресатов-->
                 <div class="icon">
                     <div class="image purple">
                         <img src="icons/checkmark.png" alt="">
@@ -57,9 +68,13 @@
                 <div class="appeal-margin-left appeal-button button purple list">
                     Отметь адресатов
                 </div>
+                <div class="appeal-margin-left appeal-choice-text">
+                    <!-- То, что было выбрано-->
+                </div>
             </div>
 
             <div class="points-block-appeal textarea">
+                <!-- описание проблемы -->
                 <div class="icon">
                     <div class="image green">
                         <img src="icons/keyboard.png" alt="">
@@ -71,13 +86,14 @@
             </div>
 
             <div class="points-block-appeal img-button-block">
+                <!-- выбор фотографии-->
                 <div class="icon">
                     <div class="image purple little">
                         <img src="icons/photo.png" alt="">
                     </div>
                 </div>
                 <div class="appeal-margin-left appeal-button button purple photo">
-                    Отметь адресатов
+                    Добавить фото или видео
                 </div>
             </div>
 
@@ -93,10 +109,43 @@
                     <?php endfor ?>
                 </div>
             </div>
-
             
-
+            <div class="points-block-appeal img-button-block">
+                <!-- Другие данные о пользователе-->
+                <div class="icon">
+                    <div class="image purple little">
+                        <img src="icons/person.png" alt="">
+                    </div>
+                </div>
+                <div class="appeal-margin-left all-inputs">
+                    <!-- Набор всех input внизу страницы-->
+                    <div>
+                        <input type="text" name="" placeholder="Фамилия">
+                    </div>
+                    <div>
+                        <input type="text" name="" placeholder="Имя">
+                    </div>
+                    <div>
+                        <input type="text" name="" placeholder="Отчество(если есть)">
+                    </div>
+                    <div>
+                        <input type="text" name="" placeholder="Должность(если есть)">
+                    </div>
+                    <div>
+                        <input type="text" name="" placeholder="Электронная почта">
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
         </div>
+        <div class="button-block">
+            <div class="button-to-appeals button purple bottom-button letter big">
+                Отправить обращение
+            </div>
+        </div>
+        
         <?php require "templates/footer.php"?>
 
         </div>

@@ -36,6 +36,14 @@
     font-size: 24px;
 }
 
+.textarea-apppeal-block textarea::-webkit-input-placeholder{
+    color: black;
+}
+
+.textarea-apppeal-block textarea::-moz-placeholder{
+    color: black;
+}
+
 .points.appeal{
     margin-top: 0;
     padding-left: 130px;
@@ -67,4 +75,39 @@
 .image-block .icon-img-photo{
     width: 60px;
     height: 60px;
+}
+
+.all-inputs{
+    width: 100%;
+    text-align: left;
+}
+
+.all-inputs input{
+    background-color: var(--light-green-logo);
+    border: 0px solid green;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 50%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+/*цвет текста placeholder*/
+input::-webkit-input-placeholder {
+    color: black;
+   } 
+input::-moz-placeholder {
+    color: black;
+}
+/* Кнопка отправки */
+
+.button-block{
+    margin-top: 60px;
+}
+
+.appeal-choice-text{
+    /* выбор, который справа от кнопки */
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 25px;
 }
