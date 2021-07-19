@@ -79,15 +79,39 @@ body{
     padding: 10px;
 }
 
-.icon img{
-    width: 65px;
-    height: 65px;
-}
 .points{
     margin-top: 60px; 
     padding-left: 180px;
     padding-right: 55px;
 }
+/* иконки в кружочках */
+
+.icon img{
+    width: 65px;
+    height: 65px;
+}
+
+.image.little {
+    padding: 22px;
+}
+
+.image.little img{
+    width: 56px;
+    height: 56px;
+}
+.image{
+    padding: 17px;
+    border-radius: 50%;
+}
+
+.image.green{
+    background-color: rgba(0, 236, 39, 0.137);
+}
+
+.image.purple{
+    background-color: rgba(90, 0, 236, 0.137);
+}
+
 
 /* Стили кнопок*/
 
@@ -106,4 +130,31 @@ body{
 
 .button.green{
     background-color: var(--light-green);
+}
+
+
+.button.list::before{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-image: url("../icons/list-w.png");
+    vertical-align: middle;
+    display: inline-block;
+    background-size: cover;
+}
+
+.button.letter::before{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-image: url("../icons/letter-w.png");
+    vertical-align: middle;
+    display: inline-block;
+    background-size: cover;
+}
+
+.button.big::before{
+    height: 55px;
+    width: 55px;
+
 }

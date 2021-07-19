@@ -27,7 +27,7 @@
                     <div>Шумные работы?</div>
                 </div>
                 <div class="button-block">
-                    <div class="button-to-appeals button purple">
+                    <div class="button-to-appeals button purple letter">
                         Подать обращение
                     </div>
                 </div>
@@ -43,7 +43,7 @@
         <div class="points">
             <div class="points-block">
                 <div class="icon">
-                    <div class="image">
+                    <div class="image purple">
                         <img src="icons/map.png" alt="">
                     </div>
                 </div>
@@ -59,7 +59,9 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/list.png" alt="">
+                    <div class="image green little">
+                        <img src="icons/list.png" alt="">
+                    </div>
                 </div>
                 <div class="text-point-block green">
                     <div class="header-point-text">
@@ -73,7 +75,9 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/keyboard.png" alt="">
+                    <div class="image purple">
+                        <img src="icons/keyboard.png" alt="">
+                    </div>
                 </div>
                 <div class="text-point-block purple">
                     <div class="header-point-text">
@@ -87,7 +91,9 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/photo.png" alt="">
+                    <div class="image green little">
+                        <img src="icons/photo.png" alt="">
+                    </div>
                 </div>
                 <div class="text-point-block green">
                     <div class="header-point-text">
@@ -101,7 +107,9 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/person.png" alt="">
+                    <div class="image purple little">
+                        <img src="icons/person.png" alt="">
+                    </div>
                 </div>
                 <div class="text-point-block purple">
                     <div class="header-point-text">
@@ -115,7 +123,9 @@
 
             <div class="points-block">
                 <div class="icon">
-                    <img src="icons/letter.png" alt="">
+                    <div class="image green">
+                        <img src="icons/letter.png" alt="">
+                    </div>
                 </div>
                 <div class="text-point-block green">
                     <div class="header-point-text">
@@ -128,7 +138,7 @@
             </div>
         </div>
         <div class="button-block">
-            <div class="button-to-appeals button purple bottom-button">
+            <div class="button-to-appeals button purple bottom-button letter big">
                 Подать обращение
             </div>
         </div>

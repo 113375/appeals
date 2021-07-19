@@ -22,13 +22,47 @@
                     <div class="green">  Подай обращение</div>
                 </div>
             </div>
-            <div class="image-block">
             
+        </div>
+        <div class="points appeal">
+            <!-- Поля для формы-->
+            <div class="points-block-appeal">
+                <div class="icon ">
+                    <div class="image purple">
+                        <img src="icons/map.png" alt="">
+                    </div>
+                </div>
+                <div class="appeal-button button purple list">
+                    Выбрать район
+                </div>
+            </div>
+
+        
+            <div class="points-block-appeal">
+                <div class="icon">
+                    <div class="image green little">
+                        <img src="icons/list.png" alt="">
+                    </div>
+                </div>
+                <div class="appeal-button button green list">
+                    Выбрать тему обращения
+                </div>
+            </div>
+
+            <div class="points-block-appeal">
+                <div class="icon">
+                    <div class="image purple">
+                        <img src="icons/checkmark.png" alt="">
+                    </div>
+                </div>
+                <div class="appeal-button button purple list">
+                    Отметь адресатов
+                </div>
             </div>
         </div>
-        <div class="points">
-            
         </div>
+
+
 
         <?php require "templates/footer.php"?>
 
