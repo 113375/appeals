@@ -1,4 +1,8 @@
 /*Стили для формы заполнения запроса*/
+:root{
+    --light-green-logo: rgba(0, 236, 39, 0.137);
+
+}
 
 .points-block-appeal{
     display: flex;
@@ -6,12 +10,30 @@
     margin-bottom: 50px;
 
 }
+.icon{
+    margin-top: auto;
+    margin-bottom: auto;
+}
 
 .appeal-button{
-    margin-left: 40px;
     display: block;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.textarea-apppeal-block{
+    width: 100%;
+}
+
+.textarea-apppeal-block textarea{
+    width: 100%;
+    background-color:var(--light-green-logo);
+    border: 0px solid black;
+    border-radius: 3px;
+    resize: none;
+    padding: 20px;
+    padding-top: 10px;
+    font-size: 24px;
 }
 
 .points.appeal{
@@ -19,3 +41,30 @@
     padding-left: 130px;
 }
 
+.appeal-margin-left{
+    margin-left: 40px;
+}
+
+.img-button-block{
+    margin-bottom: 0;
+}
+
+.img-icons-block{
+    display: flex;
+}
+
+.image-block{
+    width: 100px;
+    border-radius: 0;
+    margin-right: 15px;
+}
+
+.img-icons-block img{
+    height: 100px;
+    /* margin-right: 20px; */
+}
+
+.image-block .icon-img-photo{
+    width: 60px;
+    height: 60px;
+}

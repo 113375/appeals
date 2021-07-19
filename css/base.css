@@ -153,6 +153,16 @@ body{
     background-size: cover;
 }
 
+.button.photo::before{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-image: url("../icons/photo-w.png");
+    vertical-align: middle;
+    display: inline-block;
+    background-size: cover;
+}
+
 .button.big::before{
     height: 55px;
     width: 55px;

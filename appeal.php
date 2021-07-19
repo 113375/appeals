@@ -32,19 +32,18 @@
                         <img src="icons/map.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-button button purple list">
+                <div class="appeal-margin-left appeal-button button purple list">
                     Выбрать район
                 </div>
             </div>
 
-        
             <div class="points-block-appeal">
                 <div class="icon">
                     <div class="image green little">
                         <img src="icons/list.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-button button green list">
+                <div class="appeal-margin-left appeal-button button green list">
                     Выбрать тему обращения
                 </div>
             </div>
@@ -55,16 +54,55 @@
                         <img src="icons/checkmark.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-button button purple list">
+                <div class="appeal-margin-left appeal-button button purple list">
                     Отметь адресатов
                 </div>
             </div>
+
+            <div class="points-block-appeal textarea">
+                <div class="icon">
+                    <div class="image green">
+                        <img src="icons/keyboard.png" alt="">
+                    </div>
+                </div>
+                <div class="appeal-margin-left textarea-apppeal-block">
+                    <textarea placeholder="Опишите проблему" id=""  rows="9"></textarea>
+                </div>
+            </div>
+
+            <div class="points-block-appeal img-button-block">
+                <div class="icon">
+                    <div class="image purple little">
+                        <img src="icons/photo.png" alt="">
+                    </div>
+                </div>
+                <div class="appeal-margin-left appeal-button button purple photo">
+                    Отметь адресатов
+                </div>
+            </div>
+
+            <div class="points-block-appeal block-for-img">
+                <div class="icon" style="width: 100px; height: 100px;">
+                    
+                </div>
+                <div class="appeal-margin-left img-icons-block">
+                    <?php for($i = 0; $i < 4; $i++):?>
+                    <div class="image-block image purple">
+                        <img class="icon-img-photo" src="icons/photo.png" alt="">
+                    </div>
+                    <?php endfor ?>
+                </div>
+            </div>
+
+            
+
         </div>
-        </div>
-
-
-
         <?php require "templates/footer.php"?>
+
+        </div>
+
+
+
 
     </div>
     <script src="js/base.js"></script>
