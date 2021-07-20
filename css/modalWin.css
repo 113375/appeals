@@ -1,3 +1,7 @@
+:root {
+    --light-grey: rgb(189, 189, 189);
+}
+
 .modalwin {
     width: 30%;
     padding: 10px;
@@ -43,4 +47,10 @@
 .modal-win-header{
     margin-bottom: 20px;
     text-align: center;
+}
+
+.input-block{
+    padding: 10px 20px;
+    text-align: center;
+    
 }
