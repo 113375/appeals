@@ -157,11 +157,12 @@
     <!-- третье окно -->
     <?php require "templates/parts/choiceTopic.php"?>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
     <script src="js/appeal.js"></script>
-    <script src="js/modalWin.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="typehead/bootstrap3-typeahead.js"></script>
+    <script src="js/modalWin.js"></script>
+
 
 
 </body>

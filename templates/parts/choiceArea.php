@@ -5,7 +5,7 @@
                 Выберете район
             </div>
             <div class="input-block">
-                <input class="typeahead" data-provide="typeahead" type="text">
+                <input class="choice-area" data-provide="typeahead" type="text">
             </div>
         </div>
             
