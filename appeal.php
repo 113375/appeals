@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/appeal.css">
+    <link rel="stylesheet" href="css/modalWin.css">
 
 </head>
 <body>
@@ -33,12 +34,11 @@
                         <img src="icons/map.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple list">
+                <div class="appeal-margin-left appeal-button button purple list" type-win="choice-area">
                     Выбрать район
                 </div>
                 <div class="appeal-margin-left appeal-choice-text">
                     <!-- То, что было выбрано-->
-                    Измайлово
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
                         <img src="icons/list.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button green list">
+                <div class="appeal-margin-left appeal-button button green list" type-win="choice-topic">
                     Выбрать тему обращения
                 </div>
                 <div class="appeal-margin-left appeal-choice-text">
@@ -65,7 +65,7 @@
                         <img src="icons/checkmark.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple list">
+                <div class="appeal-margin-left appeal-button button purple list" type-win="choice-dest">
                     Отметь адресатов
                 </div>
                 <div class="appeal-margin-left appeal-choice-text">
@@ -132,7 +132,7 @@
                         <input type="text" name="" placeholder="Должность(если есть)">
                     </div>
                     <div>
-                        <input type="text" name="" placeholder="Электронная почта">
+                        <input type="email" name="" placeholder="Электронная почта">
                     </div>
                     
                 </div>
@@ -147,14 +147,18 @@
         </div>
         
         <?php require "templates/footer.php"?>
-
+        
         </div>
-
-
-
-
     </div>
+    <!-- Первое окно -->
+    <?php require "templates/parts/choiceArea.php"?>
+    <!-- второе окно -->
+    <?php require "templates/parts/choiceDestination.php"?>
+    <!-- третье окно -->
+    <?php require "templates/parts/choiceTopic.php"?>
+
     <script src="js/base.js"></script>
+    <script src="js/appeal.js"></script>
 
 </body>
 </html>

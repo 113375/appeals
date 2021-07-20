@@ -87,9 +87,10 @@
     border: 0px solid green;
     margin-bottom: 10px;
     height: 50px;
-    width: 50%;
+    width: 100%;
     padding: 5px;
     font-size: 20px;
+    max-width: 500px;
 }
 
 /*цвет текста placeholder*/
