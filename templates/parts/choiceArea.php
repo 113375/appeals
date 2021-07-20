@@ -5,12 +5,14 @@
                 Выберете район
             </div>
             <div class="radio-button-block">
-                <input type="radio" name="choice">
-                <select name="area" id="select-area"></select>
+                <input type="radio" name="choice-area" input-id="select-area">
+                <select  name="area" id="select-area">
+                
+                </select>
             </div>
             <div class="radio-button-block">
-                <input type="radio" name="choice">
-                <input type="text" name="area" id="select-area">
+                <input type="radio" name="choice-area" input-id="input-area">
+                <input  type="text" name="area" id="input-area">
             </div>
         </div>
             
