@@ -1,33 +1,44 @@
-let names = ["choice-area", "choice-topic"]
+let names = [["choice-area", "choiceArea.txt"]]
 
 let modalWin = function (){
-    //механика первого и второго модального окна
-    names.forEach(name =>{
-        let $input = $(`.${name}`);
-        $input.typeahead({
-        source: [
-            {id: "someId1", name: "Подсказка 1"},
-            {id: "someId2", name: "Подсказка 2"},
-            {id: "someId2", name: "Подсказка 3"},
-            {id: "someId2", name: "JavaScript - топ"}
-        ],
+    //механика первого модального окна 
+    $.ajax({
+        url: `data/choiceArea.txt`,
+        dataType: 'text',
+        success: function(data) {
+            makeTypeHead(data)
+        }
+    })
+        
+
+
+    function makeTypeHead(data){
+        let $input = $(".choice-area");
+
+        $input.typeahead({    
+        source: makeDictionary(data),
         autoSelect: true
         });
         $input.change(function() {
         var current = $input.typeahead("getActive");
         if (current) {
-            // Some item from your model is active!
             if (current.name == $input.val()) {
-            // This means the exact match is found. Use toLowerCase() if you want case insensitive match.
             } else {
-            // This means it is only a partial match, you can either add a new item
-            // or take the active if you don't want new items
             }
         } else {
-            // Nothing is active so it is a new value (or maybe empty value)
         }
         });
-    })
+
+
+        function makeDictionary(data){
+            data = data.split("\n")
+            let all = [{id:"", name:"fdafadsf"}]
+            for(let i = 0; i < data.length; i++){
+                all[i] = {id: data[i], name: data[i]};
+            }
+            return all;
+        }
+    }
     
     
 }
