@@ -2,10 +2,10 @@
 <div id="choice-area" class="modalwin">
         <div class="choice-area-window" >
             <div class="modal-win-header">
-                Выберете район
+                Введите название района
             </div>
             <div class="input-block">
-                <input class="choice-area" data-provide="typeahead" type="text">
+                <input class="choice-area" id="choice-area" data-provide="typeahead" type="text" placeholder="Район">
             </div>
         </div>
             

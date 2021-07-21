@@ -1,6 +1,4 @@
-let names = [["choice-area", "choiceArea.txt"]]
-
-let modalWin = function (){
+let modalWinArea = function (){
     //механика первого модального окна 
     $.ajax({
         url: `data/choiceArea.txt`,
@@ -10,8 +8,6 @@ let modalWin = function (){
         }
     })
         
-
-
     function makeTypeHead(data){
         let $input = $(".choice-area");
 
@@ -43,4 +39,27 @@ let modalWin = function (){
     
 }
 
-modalWin();
+let makeModaltopicWin = function (){
+    // Механмка второго окна для тем 
+    $.ajax({
+        url: `data/choiceTopic.txt`,
+        dataType: 'text',
+        success: function(data) {
+            data = data.split("\n")
+            makeSelect(data)
+        }
+    })
+
+    function makeSelect(data){
+        let select = document.querySelector("#select-topic")
+        data.forEach(name => {
+            let option = document.createElement("option")
+            option.textContent = name
+            option.setAttribute("value", name)
+            select.appendChild(option)
+
+        });
+    }
+}
+makeModaltopicWin()
+modalWinArea()
