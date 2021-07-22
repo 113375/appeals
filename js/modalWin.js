@@ -90,8 +90,7 @@ let formInstancesModalWin = function() {
         let block = document.querySelector(".instances-block")
         let topic = document.querySelector("#select-topic").value
         block.innerHTML = ""
-        console.log(data);
-
+        topic = topic.trim()
         data.forEach(elem => {
             let div = document.createElement("div")
             div.classList.add("checkbox-block")
@@ -99,6 +98,7 @@ let formInstancesModalWin = function() {
             checkbox.type = "checkbox"
             checkbox.setAttribute("value", elem[0]) // пусть будет id инстанции
             let checkBlock = document.createElement("div")
+            elem[6] = elem[6].trim()
             if (topic === elem[6]) {
                 checkbox.checked = true
             }
