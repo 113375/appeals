@@ -1,10 +1,10 @@
 <!-- Модальное окно для выбора адрессатов-->
 <div id="choice-dest" class="modalwin">
-        <div class="choice-window">
-            <div>
-                Тестовый пример окна которое может быть (адресатов)
-            </div>
-            
+    <div class="choice-area-window" >
+        <div class="modal-win-header">
+                Выберите адресатов 
         </div>
+            
+    </div>
             
 </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/modalWin.css">
 
 </head>
+
 <body>
     <div class="container">
         <?php require "templates/header.php" ?>
@@ -19,17 +21,17 @@
             <div class="text-block">
                 <!-- левый блок с текстом и кнопкой перехода к обращению-->
                 <div class="header-text">
-                    <div class="purple" >Пресеки нарушение</div>
-                    <div class="green">  Подай обращение</div>
+                    <div class="purple">Пресеки нарушение</div>
+                    <div class="green"> Подай обращение</div>
                 </div>
             </div>
-            
+
         </div>
         <div class="points appeal">
             <!-- Поля для формы-->
             <div class="points-block-appeal">
                 <!--выбор района-->
-                 <div class="icon "> 
+                <div class="icon ">
                     <div class="image purple">
                         <img src="icons/map.png" alt="">
                     </div>
@@ -81,7 +83,7 @@
                     </div>
                 </div>
                 <div class="appeal-margin-left textarea-apppeal-block">
-                    <textarea placeholder="Опишите проблему" id=""  rows="9"></textarea>
+                    <textarea placeholder="Опишите проблему" id="" rows="9"></textarea>
                 </div>
             </div>
 
@@ -99,7 +101,7 @@
 
             <div class="points-block-appeal block-for-img">
                 <div class="icon" style="width: 100px; height: 100px;">
-                    
+
                 </div>
                 <div class="appeal-margin-left img-icons-block">
                     <?php for($i = 0; $i < 4; $i++):?>
@@ -109,7 +111,7 @@
                     <?php endfor ?>
                 </div>
             </div>
-            
+
             <div class="points-block-appeal img-button-block">
                 <!-- Другие данные о пользователе-->
                 <div class="icon">
@@ -134,21 +136,21 @@
                     <div>
                         <input type="email" name="" placeholder="Электронная почта">
                     </div>
-                    
+
                 </div>
             </div>
-            
-            
+
+
         </div>
         <div class="button-block">
             <div class="button-to-appeals button purple bottom-button letter big">
                 Отправить обращение
             </div>
         </div>
-        
+
         <?php require "templates/footer.php"?>
-        
-        </div>
+
+    </div>
     </div>
     <!-- Первое окно -->
     <?php require "templates/parts/choiceArea.php"?>
@@ -157,7 +159,8 @@
     <!-- третье окно -->
     <?php require "templates/parts/choiceTopic.php"?>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/base.js"></script>
     <script src="js/appeal.js"></script>
     <script src="typehead/bootstrap3-typeahead.js"></script>
@@ -166,4 +169,5 @@
 
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
 
 </head>
+
 <body>
     <div class="container">
         <?php require "templates/header.php" ?>
@@ -18,8 +20,8 @@
             <div class="text-block">
                 <!-- левый блок с текстом и кнопкой перехода к обращению-->
                 <div class="header-text">
-                    <div class="purple" >Пресеки нарушение</div>
-                    <div class="green">  Подай обращение</div>
+                    <div class="purple">Пресеки нарушение</div>
+                    <div class="green"> Подай обращение</div>
                 </div>
                 <div class="regular-text">
                     <div>Некачественное благоустройство?</div>
@@ -34,8 +36,8 @@
             </div>
             <!-- блок с пунктами действия-->
             <div class="image-block">
-                
-            
+
+
             </div>
             <!-- TODO надо сделать оптимизацию под мобильные устройства-->
         </div>
@@ -99,7 +101,7 @@
                         Загрузи фото и видео
                     </div>
                     <div class="regular-point-text">
-                        Используй фотографии, на которых явно видно нарушение.                    
+                        Используй фотографии, на которых явно видно нарушение.
                     </div>
                 </div>
             </div>
@@ -133,7 +135,7 @@
                     <div class="regular-point-text">
                         Отправь обращение и повлияй на проблемы в своём районе!
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
         <div class="button-block">
@@ -141,13 +143,14 @@
                 Подать обращение
             </div>
         </div>
-       
+
 
         <?php require "templates/footer.php"?>
 
     </div>
-<script src="js/main.js"></script>
-<script src="js/base.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/base.js"></script>
 
 </body>
+
 </html>

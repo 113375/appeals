@@ -39,27 +39,4 @@ let modalWinArea = function (){
     
 }
 
-let makeModaltopicWin = function (){
-    // Механмка второго окна для тем 
-    $.ajax({
-        url: `data/choiceTopic.txt`,
-        dataType: 'text',
-        success: function(data) {
-            data = data.split("\n")
-            makeSelect(data)
-        }
-    })
-
-    function makeSelect(data){
-        let select = document.querySelector("#select-topic")
-        data.forEach(name => {
-            let option = document.createElement("option")
-            option.textContent = name
-            option.setAttribute("value", name)
-            select.appendChild(option)
-
-        });
-    }
-}
-makeModaltopicWin()
 modalWinArea()
