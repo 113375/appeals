@@ -5,7 +5,7 @@
             Введите название района
         </div>
         <div class="input-block">
-            <input class="choice-area" id="choice-area" data-provide="typeahead" type="text" placeholder="Район">
+            <input class="choice-area" id="choice-area-input" data-provide="typeahead" type="text" placeholder="Район">
         </div>
     </div>
 

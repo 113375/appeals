@@ -68,7 +68,7 @@
                         <img src="icons/checkmark.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple list" type-win="choice-dest">
+                <div class="appeal-margin-left appeal-button button purple list" id="instances-button" type-win="choice-dest">
                     Отметь адресатов
                 </div>
                 <div class="appeal-margin-left appeal-choice-text">

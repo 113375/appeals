@@ -4,10 +4,8 @@
         <div class="modal-win-header">
                 Выберите адресатов 
         </div>
-        <div class="instances-block">
-            <?php for($i = 0; $i < 20; $i++):?>
-                <p>fdsaafdsaf</p>
-            <?php endfor ?>
+        <div class="instances-block" chosen-area="" chosen-topic="">
+            
         </div>
             
     </div>
