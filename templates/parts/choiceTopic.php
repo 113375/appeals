@@ -12,7 +12,7 @@
                     $data = makeRequest("SELECT name FROM topic");
                 ?>
                 <?php foreach($data as $name):?>
-                    <option value="<?= name["name"]?>"><?= $name["name"]?></option>
+                    <option value="<?= $name["name"]?>"><?= $name["name"]?></option>
                 <?php endforeach ?>
                 
             </select>
