@@ -1,5 +1,5 @@
 <?php 
-
+//Файл с базовыми функциями 
 $host = "localhost";
 $name = "appeals";
 $user = "root";
