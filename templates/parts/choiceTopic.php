@@ -6,15 +6,22 @@
         </div>
         <div class="input-block">
             <select id="select-topic">
-                <option disabled>Выберите тему</option>
-
+                <option selected="selected"  disabled>Выберите тему</option>
+                <?php 
+                //Будем добавлять option (все темы)
+                    $data = makeRequest("SELECT name FROM topic");
+                ?>
+                <?php foreach($data as $name):?>
+                    <option value="<?= name["name"]?>"><?= $name["name"]?></option>
+                <?php endforeach ?>
+                
             </select>
+           
         </div>
     </div>
 
 </div>
 
-<!-- TODO Тут надо будет сделать блок с чекбоксами, которые будут прокручиваться 
-отмечены только те, что по теме 
-сделать надо будет как-то красиво
+<!-- TODO Надо переделать все под базу данных 
 -->
+
