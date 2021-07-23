@@ -57,7 +57,7 @@
 }
 
 .instances-block {
-    height: 150px;
+    height: 300px;
     width: 100%;
     overflow: scroll;
     margin-left: auto;
@@ -71,6 +71,7 @@
 
 .checkbox-block {
     display: flex;
+    margin-bottom: 7px;
 }
 
 .instances-block input {

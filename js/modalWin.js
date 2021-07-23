@@ -44,11 +44,11 @@ let modalWinArea = function() {
 }
 
 let formInstancesModalWin = function() {
+    //Формируем окно модальное (третье с чекбоксами)
     let button = document.querySelector("#instances-button")
     button.addEventListener("click", makeRequest)
 
     function makeRequest() {
-        //TODO надо сделать отображение всех общих инстанций и всех для выбранного района
         let block = document.querySelector(".instances-block")
         let area = document.querySelector("#choice-area-input").value
         let topic = document.querySelector("#select-topic").value
@@ -67,8 +67,10 @@ let formInstancesModalWin = function() {
         block.innerHTML = ""
         block.setAttribute("chosen-area", area)
         let json = { query: `SELECT * FROM instance i
-                            INNER JOIN topic t ON i.topic_id = t.id
-                            WHERE i.area_id IN (SELECT id FROM area WHERE name = "*" OR name = "${area}")
+                             JOIN topic_instance ti 
+                            ON i.id = ti.instance_id 
+                             JOIN topic t on t.id = ti.topic_id
+                            WHERE i.area_id in (SELECT id FROM area WHERE name = "*" OR name = "${area}")
                             ORDER BY t.name` }
         fetch(url, {
             method: "POST",
@@ -87,6 +89,7 @@ let formInstancesModalWin = function() {
 
     function refactorInstancesModalWin(data) {
         // полность переделываем страницу 
+        data = refactorData(data)
         let block = document.querySelector(".instances-block")
         let topic = document.querySelector("#select-topic").value
         block.innerHTML = ""
@@ -98,8 +101,8 @@ let formInstancesModalWin = function() {
             checkbox.type = "checkbox"
             checkbox.setAttribute("value", elem[0]) // пусть будет id инстанции
             let checkBlock = document.createElement("div")
-            elem[6] = elem[6].trim()
-            if (topic === elem[6]) {
+            elem["name"] = elem["name"].trim()
+            if (elem["name"].indexOf(topic) !== -1) {
                 checkbox.checked = true
             }
 
@@ -107,6 +110,8 @@ let formInstancesModalWin = function() {
             checkBlock.appendChild(checkbox)
             let blockForText = document.createElement("div")
             blockForText.textContent = elem["title"]
+                //TODO выбранные всплывают наверх 
+                //Надо исправить дублирование жилищника и управы
 
 
             div.appendChild(checkBlock)
@@ -114,6 +119,20 @@ let formInstancesModalWin = function() {
             block.appendChild(div)
         })
 
+        function refactorData(data) {
+            // объединяем темы, убираем лишнее 
+            let arr = []
+            data.forEach(elem => {
+                if (!arr[elem[0]]) {
+                    arr[elem[0]] = elem
+                } else {
+                    elem["name"] += `  ${arr[elem[0]]["name"]}`
+                }
+            })
+            return data.reverse()
+        }
+
+        // TODO надо будет заполнить базу данных 
     }
 
 
