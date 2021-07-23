@@ -1,5 +1,5 @@
-let choiceAreaButton = function () {
-    let allButtons = document.querySelectorAll(".appeal-button");
+let choiceAreaButton = function() {
+    let allButtons = document.querySelectorAll(".appeal-button-win");
     allButtons.forEach(button => {
         button.addEventListener("click", showModalWin)
     });
@@ -13,10 +13,21 @@ let choiceAreaButton = function () {
         let modalWin = document.getElementById(modWin);
         modalWin.classList.add("visible");
 
-        darkLayer.onclick = function () {
+        let showAreaId = this.getAttribute("show-area-id")
+
+        darkLayer.onclick = function() {
             darkLayer.parentNode.removeChild(darkLayer);
             modalWin.classList.remove("visible");
-            return false;
+            try {
+                let showArea = document.querySelector(`#${showAreaId}`)
+                let inputId = showArea.getAttribute("input-id")
+                showArea.textContent = document.querySelector(`#${inputId}`).value
+                return false;
+            } catch (e) {
+                console.log(e);
+                return false
+            }
+
         };
     }
 }

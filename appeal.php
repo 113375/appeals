@@ -37,11 +37,11 @@
                         <img src="icons/map.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple list" type-win="choice-area">
+                <div class="appeal-margin-left appeal-button appeal-button-win button purple list" type-win="choice-area" show-area-id="choice-area-show">
                     Выбрать район
                 </div>
-                <div class="appeal-margin-left appeal-choice-text">
-                    <!-- То, что было выбрано-->
+                <div class="appeal-margin-left appeal-choice-text " id="choice-area-show" input-id="choice-area-input">
+                    <!--TODO  То, что было выбрано-->
                 </div>
             </div>
 
@@ -53,10 +53,10 @@
                         <img src="icons/list.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button green list" type-win="choice-topic">
+                <div class="appeal-margin-left appeal-button button green appeal-button-win list" type-win="choice-topic" show-area-id="choice-topic-show">
                     Выбрать тему обращения
                 </div>
-                <div class="appeal-margin-left appeal-choice-text">
+                <div class="appeal-margin-left appeal-choice-text"  id="choice-topic-show" input-id="select-topic">
                     <!-- То, что было выбрано-->
                 </div>
             </div>
@@ -68,7 +68,7 @@
                         <img src="icons/checkmark.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple list" id="instances-button"
+                <div class="appeal-margin-left appeal-button button purple appeal-button-win list" id="instances-button"
                     type-win="choice-dest">
                     Отметь адресатов
                 </div>
