@@ -66,6 +66,7 @@ let formInstancesModalWin = function() {
         }
         block.innerHTML = ""
         block.setAttribute("chosen-area", area)
+        block.setAttribute("chosen-topic", topic)
         let json = { query: `SELECT * FROM instance i
                              JOIN topic_instance ti 
                             ON i.id = ti.instance_id 
