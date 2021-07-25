@@ -1,3 +1,4 @@
+// логика каждого всплывающего окна 
 let url = "http://localhost:8888/appeals/query.php"
 
 let modalWinArea = function() {

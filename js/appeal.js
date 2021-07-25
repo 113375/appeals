@@ -1,3 +1,4 @@
+// логика модальных окон 
 let choiceAreaButton = function() {
     let allButtons = document.querySelectorAll(".appeal-button-win");
     allButtons.forEach(button => {

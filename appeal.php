@@ -40,9 +40,7 @@
                 <div class="appeal-margin-left appeal-button appeal-button-win button purple list" type-win="choice-area" show-area-id="choice-area-show">
                     Выбрать район
                 </div>
-                <div class="appeal-margin-left appeal-choice-text " id="choice-area-show" input-id="choice-area-input">
-                    <!--TODO  То, что было выбрано-->
-                </div>
+                <div class="appeal-margin-left appeal-choice-text " id="choice-area-show" input-id="choice-area-input">                </div>
             </div>
 
             <div class="points-block-appeal">
