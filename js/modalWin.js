@@ -111,28 +111,41 @@ let formInstancesModalWin = function() {
             let blockForText = document.createElement("div")
             blockForText.textContent = elem["title"]
                 //TODO выбранные всплывают наверх 
-                //Надо исправить дублирование жилищника и управы
 
 
             div.appendChild(checkBlock)
             div.appendChild(blockForText)
             block.appendChild(div)
+
         })
 
         function refactorData(data) {
-            // объединяем темы, убираем лишнее 
+            // объединяем темы, убираем лишнее (Чтобы жилищник и управа не повторялись)
             let arr = []
-            data.forEach(elem => {
+            data.forEach(function(elem, index) {
                 if (!arr[elem[0]]) {
-                    arr[elem[0]] = elem
+                    arr[elem[0]] = elem["name"]
                 } else {
-                    elem["name"] += `  ${arr[elem[0]]["name"]}`
+                    arr[elem[0]] += `  ${elem["name"]}`
+                    data[index] = {}
                 }
             })
-            return data.reverse()
+            let result = []
+            let i = 0
+            data.forEach(elem => {
+                if (elem && arr[elem[0]]) {
+                    elem["name"] = arr[elem[0]]
+                    result[i] = elem;
+                    i++;
+                }
+            })
+            return result
         }
 
-        // TODO надо будет заполнить базу данных 
+
+
+
+
     }
 
 
