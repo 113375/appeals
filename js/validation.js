@@ -13,10 +13,10 @@ let sendButton = function() {
         let patronymic = document.querySelector("#input-patronymic").value
         let position = document.querySelector("#input-position").value
         let email = document.querySelector("#input-email").value
-        if (!checkInputs(area, instances, text, surname, name, email)) {
-            return
-        }
-        //делаем запрос на сервер
+            // if (!checkInputs(area, instances, text, surname, name, email)) {
+            //     return
+            // }
+            //делаем запрос на сервер
         let url = "http://localhost:8888/appeals/send.php"
             // TODO на релизе надо будет поменять эту ссылку
         let json = {
