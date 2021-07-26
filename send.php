@@ -2,13 +2,12 @@
 //Отправка по почте информации
 header('Content-Type: application/json');
 require "base.php";
+define('FPDF_FONTPATH',"fpdf/font/");
+require('fpdf/fpdf.php');
 
 
 
-
-function createPDF($data){
-    define('FPDF_FONTPATH',"fpdf/font/");
-    require('fpdf/fpdf.php');
+function createPDF($data, $name){
     $pdf=new FPDF();
     $pdf->SetTitle("Обращение");
     $pdf->AddPage('P');
@@ -17,31 +16,44 @@ function createPDF($data){
     $pdf->SetFont('Arial');
     $pdf->SetFontSize(14);
     $pdf->SetMargins(10, 40);
-    $pdf->Cell( 0, 20,iconv('utf-8', 'windows-1251',"От кого очень очень очень очень очень длинный текст"), 0, 1, 'R' );
-    $pdf->Cell( 0, 20,iconv('utf-8', 'windows-1251',"От"." кого очень очень очень очень очень длинный текст"), 0, 1, 'R' );
+    $pdf->Cell( 0, 20,iconv('utf-8', 'windows-1251',$name), 0, 1, 'R' );
+
+    $namePerson = $data->name;
+    $surname = $data->surname;
+    $patronymic = $data->patronymic;
+    $pdf->Cell( 0, 20,iconv('utf-8', 'windows-1251',"От: $surname $namePerson $patronymic"), 0, 1, 'R' ); // от кого письмо
+
     $pdf->Cell( 0, 50,iconv('utf-8', 'windows-1251',"Обращение"), 0, 1, 'C' );
-    $pdf->WRITE( 7,iconv('utf-8', 'windows-1251', "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tristique hendrerit tristique. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla eu mi ante. In interdum, lectus ac consequat ornare, quam orci pretium felis, eu sollicitudin nisi nisi nec arcu. Proin facilisis eros nec nisl aliquet, ut maximus justo porttitor. Nunc eget tristique velit. Suspendisse dapibus dignissim sodales. Nulla augue sapien, congue eget orci eget, feugiat vestibulum turpis. Maecenas laoreet efficitur velit, id venenatis leo pharetra porta. Pellentesque ultricies turpis eget justo consequat, quis luctus ex vestibulum. Curabitur tristique ultrices ultricies.
-    Morbi tempus lobortis turpis, sit amet pulvinar nulla maximus at. Etiam dictum lacinia nisi sed tincidunt. Nullam eget purus id arcu sodales tempor ut ac dui. Etiam ut rutrum magna. Aenean leo dui, fermentum sit amet ante sollicitudin, interdum elementum arcu. Duis rutrum sem enim, ac volutpat lorem tristique in. Cras pellentesque euismod lorem eu porttitor. Fusce gravida vehicula leo, et gravida ligula placerat id. Ut in est blandit, varius nisi ut, hendrerit lacus. Fusce vel ipsum id nibh imperdiet aliquet ac aliquet mi. Cras porta nisl augue, ac pretium lectus luctus ac. Sed id mattis magna, quis viverra dolor. Maecenas purus lacus, lacinia a ultrices et, aliquet eget dolor.
-    ") );
+
+    $text = $data->text;
+    $pdf->WRITE( 7,iconv('utf-8', 'windows-1251', $text) );
     $pdf->Cell(0, 0,iconv('utf-8', 'windows-1251',""), 0, 1, 'L' );
-    $pdf->Cell(0, 25,iconv('utf-8', 'windows-1251',"Смотрите прикреплённые файлы в письме"), 0, 1, 'L' );
+    $pdf->Cell(0, 40,iconv('utf-8', 'windows-1251',"Смотрите прикреплённые файлы в письме"), 0, 1, 'L' );
 
+    $email = $data->email;
+    $pdf->Cell(0, 25,iconv('utf-8', 'windows-1251',"Ответ прошу направить по электронной почте: " . $email), 0, 1, 'L' );
 
-    $pdf->Cell(0, 25,iconv('utf-8', 'windows-1251',"Ответ прошу направить по электронной почте " . "Тут почта будет "), 0, 1, 'L' );
-
-
-
-
-    $pdf->Output('appeal.pdf', 'F');
+    $pdf->Output('appeal.pdf', 'F'); // сохраняем обращение на сервере 
 }
 
-function sendEmail($data){   
-    createPDF($data);
+function sendEmail($data){
+    $ids = $data->instances;
+    foreach($ids as $id){
+        $inst = makeRequest("SELECT * FROM instance WHERE id = " . $id);
+        $name = $inst[0]["title"];
+        createPDF($data, $name);
+        $email = $data->$email;
+
+    }
+}
+
+function processing($data){   
+    sendEmail($data);
     return ["status"=> "pdf отправлены"];
 }
 
 
 
 $data = json_decode(file_get_contents("php://input"));
-echo json_encode(sendEmail($data));
+echo json_encode(processing($data));
 ?>
