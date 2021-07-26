@@ -146,7 +146,7 @@
 
         </div>
         <div class="button-block">
-            <div class="button-to-appeals button purple bottom-button letter big" id="send-buuton">
+            <div class="button-to-appeals button purple bottom-button letter big" id="send-button">
                 Отправить обращение
             </div>
         </div>
@@ -168,6 +168,7 @@
     <script src="js/appeal.js"></script>
     <script src="typehead/bootstrap3-typeahead.js"></script>
     <script src="js/modalWin.js"></script>
+    <script src="js/validation.js"></script>
 
 
 
