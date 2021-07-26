@@ -16,12 +16,32 @@ let sendButton = function() {
         if (!checkInputs(area, instances, text, surname, name, email)) {
             return
         }
+        //делаем запрос на сервер
+        let url = "http://localhost:8888/appeals/send.php"
+            // TODO на релизе надо будет поменять эту ссылку
+        let json = {
+            area: area,
+            instances: instances,
+            text: text,
+            surname: surname,
+            name: name,
+            patronymic: patronymic,
+            position: position,
+            email: email
+        }
 
-
-
-        //TODO достаем все поля
-        //TODO проверяем наличие нужных
-        // отправляем на сервер
+        fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(json)
+        }).then(function(response) {
+            return response.json()
+        }).then(function(data) {
+            //если все успешно, вывести эту информацию
+            console.log(data);
+        })
     }
 
     function checkInputs(area, instances, text, surname, name, email) {
