@@ -41,6 +41,7 @@ let sendButton = function() {
         }).then(function(data) {
             //если все успешно, вывести эту информацию
             console.log(data);
+            alert("Письмо успешно отправлено")
         })
     }
 
