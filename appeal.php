@@ -94,7 +94,7 @@
                         <img src="icons/photo.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple photo">
+                <div class="appeal-margin-left appeal-button button purple photo" id="photo-add-button">
                     Добавить фото или видео
                 </div>
             </div>
@@ -105,9 +105,9 @@
                 </div>
                 <div class="appeal-margin-left img-icons-block">
                     <?php for($i = 0; $i < 4; $i++):?>
-                    <div class="image-block image purple">
-                        <img class="icon-img-photo" src="icons/photo.png" alt="">
-                    </div>
+                        <div class="image-block image purple">
+                            <img class="icon-img-photo" src="icons/photo.png" alt="">
+                        </div>
                     <?php endfor ?>
                 </div>
             </div>

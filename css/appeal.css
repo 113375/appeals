@@ -1,33 +1,33 @@
 /*Стили для формы заполнения запроса*/
-:root{
-    --light-green-logo: rgba(0, 236, 39, 0.137);
 
+:root {
+    --light-green-logo: rgba(0, 236, 39, 0.137);
 }
 
-.points-block-appeal{
+.points-block-appeal {
     display: flex;
     text-align: center;
     margin-bottom: 50px;
-
 }
-.icon{
+
+.icon {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.appeal-button{
+.appeal-button {
     display: block;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.textarea-apppeal-block{
+.textarea-apppeal-block {
     width: 100%;
 }
 
-.textarea-apppeal-block textarea{
+.textarea-apppeal-block textarea {
     width: 100%;
-    background-color:var(--light-green-logo);
+    background-color: var(--light-green-logo);
     border: 0px solid black;
     border-radius: 3px;
     resize: none;
@@ -36,53 +36,52 @@
     font-size: 24px;
 }
 
-.textarea-apppeal-block textarea::-webkit-input-placeholder{
+.textarea-apppeal-block textarea::-webkit-input-placeholder {
     color: black;
 }
 
-.textarea-apppeal-block textarea::-moz-placeholder{
+.textarea-apppeal-block textarea::-moz-placeholder {
     color: black;
 }
 
-.points.appeal{
+.points.appeal {
     margin-top: 0;
     padding-left: 130px;
 }
 
-.appeal-margin-left{
+.appeal-margin-left {
     margin-left: 40px;
 }
 
-.img-button-block{
+.img-button-block {
     margin-bottom: 0;
 }
 
-.img-icons-block{
+.img-icons-block {
     display: flex;
 }
 
-.image-block{
+.image-block {
     width: 100px;
     border-radius: 0;
     margin-right: 15px;
 }
 
-.img-icons-block img{
+.img-icons-block img {
     height: 100px;
-    /* margin-right: 20px; */
 }
 
-.image-block .icon-img-photo{
+.image-block .icon-img-photo {
     width: 60px;
     height: 60px;
 }
 
-.all-inputs{
+.all-inputs {
     width: 100%;
     text-align: left;
 }
 
-.all-inputs input{
+.all-inputs input {
     background-color: var(--light-green-logo);
     border: 0px solid green;
     margin-bottom: 10px;
@@ -93,22 +92,31 @@
     max-width: 500px;
 }
 
+
 /*цвет текста placeholder*/
+
 input::-webkit-input-placeholder {
     color: black;
-   } 
+}
+
 input::-moz-placeholder {
     color: black;
 }
+
+
 /* Кнопка отправки */
 
-.button-block{
+.button-block {
     margin-top: 60px;
 }
 
-.appeal-choice-text{
+.appeal-choice-text {
     /* выбор, который справа от кнопки */
     margin-top: auto;
     margin-bottom: auto;
     font-size: 25px;
+}
+
+.image-show {
+    margin-right: 20px;
 }
