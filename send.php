@@ -78,6 +78,7 @@ function sendEmail($data){
         $name = $inst[0]["title"];
         createPDF($data, $name);
         $email = $data->$email;
+        $email = "knyazevdima05@gmail.com";
         sendMessagePHPMailer($email, $inst, $data);
     }
 }
