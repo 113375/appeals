@@ -1,6 +1,6 @@
 <?php 
 //Отправка по почте информации
-header('Content-Type: application/json');
+header('Content-Type: multipart/form-data');
 require "base.php";
 define('FPDF_FONTPATH',"fpdf/font/");
 require('fpdf/fpdf.php');
@@ -12,7 +12,7 @@ require "PHPMailer/src/SMTP.php";
 
 
 
-function createPDF($data, $name){
+function createPDF( $name){
     $pdf=new FPDF();
     $pdf->SetTitle("Обращение");
     $pdf->AddPage('P');
@@ -23,25 +23,25 @@ function createPDF($data, $name){
     $pdf->SetMargins(10, 40);
     $pdf->Cell( 0, 20,iconv('utf-8', 'windows-1251',$name), 0, 1, 'R' );
 
-    $namePerson = $data->name;
-    $surname = $data->surname;
-    $patronymic = $data->patronymic;
+    $namePerson = $_POST["name"];
+    $surname = $_POST["surname"];
+    $patronymic = $_POST["patronymic"];
     $pdf->Cell( 0, 20,iconv('utf-8', 'windows-1251',"От: $surname $namePerson $patronymic"), 0, 1, 'R' ); // от кого письмо
 
     $pdf->Cell( 0, 50,iconv('utf-8', 'windows-1251',"Обращение"), 0, 1, 'C' );
 
-    $text = $data->text;
+    $text = $_POST["text"];
     $pdf->WRITE( 7,iconv('utf-8', 'windows-1251', $text) );
     $pdf->Cell(0, 0,iconv('utf-8', 'windows-1251',""), 0, 1, 'L' );
     $pdf->Cell(0, 40,iconv('utf-8', 'windows-1251',"Смотрите прикреплённые файлы в письме"), 0, 1, 'L' );
 
-    $email = $data->email;
+    $email = $_POST["email"];
     $pdf->Cell(0, 25,iconv('utf-8', 'windows-1251',"Ответ прошу направить по электронной почте: " . $email), 0, 1, 'L' );
 
     $pdf->Output('appeal.pdf', 'F'); // сохраняем обращение на сервере 
 }
 
-function sendMessagePHPMailer($email, $inst, $data){
+function sendMessagePHPMailer($email, $inst){
     try{
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $mail->isSMTP();   
@@ -61,36 +61,39 @@ function sendMessagePHPMailer($email, $inst, $data){
         $mail->addAddress($email, '');
         $mail->Subject = 'ОБращение с сайта obratis.com';
         $mail->addReplyTo($email, "Для ответа");
-        $mail->msgHTML("My message body");
+        $mail->msgHTML(" ");
             // Attach uploaded files
         $mail->addAttachment("appeal.pdf");
+
+        for ($ct = 0; $ct < count($_FILES['file']['tmp_name']); $ct++) {
+            $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['file']['name'][$ct]));
+            $filename = $_FILES['file']['name'][$ct];
+            if (move_uploaded_file($_FILES['file']['tmp_name'][$ct], $uploadfile)) {
+                $mail->addAttachment($uploadfile, $filename);
+            }
+        }
+        
+        
+
         $r = $mail->send();
         
     }catch(Exception $e){
-        echo $e;
+        echo print_r($e);
     }
 }
 
-function sendEmail($data){
-    $ids = $data->instances;
-    foreach($ids as $id){
-        $inst = makeRequest("SELECT * FROM instance WHERE id = " . $id);
-        $name = $inst[0]["title"];
-        createPDF($data, $name);
-        $email = $data->$email;
-        $email = "knyazevdima05@gmail.com";
-        sendMessagePHPMailer($email, $inst, $data);
-    }
+$ids = array($_POST["instances"]);
+foreach($ids as $id){
+    $inst = makeRequest("SELECT * FROM instance WHERE id = " . $id);
+    $name = $inst[0]["title"];
+    createPDF( $name);
+    $email = $_POST["email"];
+    sendMessagePHPMailer($email, $inst);
 }
 
-
-function processing($data){   
-    sendEmail($data);
-    return ["status"=> "pdf отправлены"];
-}
+$uploaddir = '/var/www/uploads/';
+$uploadfile = $uploaddir . basename($_FILES['file']);
 
 
 
-$data = json_decode(file_get_contents("php://input"));
-echo json_encode(processing($data));
 ?>

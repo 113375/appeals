@@ -13,36 +13,53 @@ let sendButton = function() {
         let patronymic = document.querySelector("#input-patronymic").value
         let position = document.querySelector("#input-position").value
         let email = document.querySelector("#input-email").value
-        if (!checkInputs(area, instances, text, surname, name, email)) {
-            return
-        }
-        //делаем запрос на сервер
+            // if (!checkInputs(area, instances, text, surname, name, email)) {
+            //     return
+            // }
+            //делаем запрос на сервер
         let url = "http://localhost:8888/appeals/send.php"
             // TODO на релизе надо будет поменять эту ссылку
-        let json = {
-            area: area,
-            instances: instances,
-            text: text,
-            surname: surname,
-            name: name,
-            patronymic: patronymic,
-            position: position,
-            email: email
-        }
 
-        fetch(url, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(json)
-        }).then(function(response) {
-            return response.json()
-        }).then(function(data) {
-            //если все успешно, вывести эту информацию
-            console.log(data);
-            alert("Письмо успешно отправлено")
+        let formData = new FormData()
+        allFilesPath.forEach(file => {
+            formData.append("file[]", file)
         })
+        formData.append("area", area)
+        formData.append("instances", instances)
+        formData.append("text", text)
+        formData.append("surname", surname)
+        formData.append("name", name)
+        formData.append("patronymic", patronymic)
+        formData.append("position", position)
+        formData.append("email", email)
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            mimeType: 'multipart/form-data',
+            success: function(returndata) {
+                alert(returndata);
+            }
+        });
+
+        // fetch(url, {
+        //     method: "POST",
+        //     headers: {
+        //         'Content-Type': 'application/json;charset=utf-8'
+        //     },
+        //     body: JSON.stringify(json)
+        // }).then(function(response) {
+        //     return response.json()
+        // }).then(function(data) {
+        //     //если все успешно, вывести эту информацию
+        //     console.log(data);
+        //     alert("Письмо успешно отправлено")
+        // })
     }
 
     function checkInputs(area, instances, text, surname, name, email) {
