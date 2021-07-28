@@ -7,7 +7,6 @@ let buttonToAppeal = function() {
     })
 
     function toAppeal() {
-        // сам переход
         window.location.href = "appeal.php";
     }
 }
