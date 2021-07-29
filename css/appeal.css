@@ -120,3 +120,32 @@ input::-moz-placeholder {
 .image-show {
     margin-right: 20px;
 }
+
+@media (max-width: 639px) {
+    .points.appeal {
+        padding-left: 0;
+    }
+    .points-block-appeal {
+        margin-bottom: 26px;
+    }
+    .appeal-margin-left {
+        margin-left: 20px;
+    }
+    .textarea-apppeal-block textarea {
+        padding: 10px;
+        padding-top: 5px;
+        font-size: 13px;
+        height: 100px;
+    }
+    .all-inputs input {
+        height: 40px;
+        font-size: 15px;
+        max-width: 500px;
+    }
+    .icon-empty {
+        display: none;
+    }
+    .img-icons-block {
+        overflow-x: scroll;
+    }
+}

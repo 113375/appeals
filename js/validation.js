@@ -44,22 +44,11 @@ let sendButton = function() {
             mimeType: 'multipart/form-data',
             success: function(returndata) {
                 alert(returndata);
+                location.reload()
             }
         });
 
-        // fetch(url, {
-        //     method: "POST",
-        //     headers: {
-        //         'Content-Type': 'application/json;charset=utf-8'
-        //     },
-        //     body: JSON.stringify(json)
-        // }).then(function(response) {
-        //     return response.json()
-        // }).then(function(data) {
-        //     //если все успешно, вывести эту информацию
-        //     console.log(data);
-        //     alert("Письмо успешно отправлено")
-        // })
+
     }
 
     function checkInputs(area, instances, text, surname, name, email) {

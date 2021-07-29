@@ -1,54 +1,74 @@
 /*Стили для главной страницы*/
 
-.regular-text{
+.regular-text {
     font-size: 24px;
     margin-bottom: 40px;
 }
 
-
-.image-block{
+.image-block {
     width: 50%;
 }
 
-
-.points-block{
+.points-block {
     display: flex;
     margin-bottom: 60px;
 }
 
-.header-point-text{
+.header-point-text {
     font-size: 24px;
     padding-left: 5px;
     padding-bottom: 20px;
-
 }
 
-.regular-point-text{
+.regular-point-text {
     font-size: 18px;
 }
 
-.text-point-block{
+.text-point-block {
     padding: 12px 20px 12px 40px;
     width: 100%;
     margin-left: 30px;
 }
 
-.text-point-block.purple{
+.text-point-block.purple {
     background-color: rgba(90, 0, 236, 0.137);
 }
 
-.text-point-block.green{
+.text-point-block.green {
     background-color: rgba(0, 236, 39, 0.137);
 }
 
-.icon{
+.icon {
     margin: auto;
 }
 
-
-.bottom-button{
+.bottom-button {
     font-size: 30px;
     padding: 20px 40px;
     border-radius: 8px;
 }
 
+@media (max-width: 639px) {
+    .regular-text {
+        font-size: 19px;
+        margin-bottom: 19px;
+    }
+    .regular-point-text {
+        font-size: 14px;
+    }
+    .header-point-text {
+        font-size: 21px;
+        padding-left: 5px;
+        padding-bottom: 6px;
+    }
+    .text-point-block {
+        padding: 12px 10px 12px 10px;
+        width: 100%;
+        margin-left: 10px;
+    }
+    .bottom-button {
+        font-size: 19px;
+        padding: 7px 20px;
+        border-radius: 8px;
+    }
+}

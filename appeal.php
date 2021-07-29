@@ -100,7 +100,7 @@
             </div>
 
             <div class="points-block-appeal block-for-img">
-                <div class="icon" style="width: 100px; height: 100px;">
+                <div class="icon icon-empty" style="width: 100px; height: 100px;">
 
                 </div>
                 <div class="appeal-margin-left img-icons-block">

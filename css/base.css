@@ -1,31 +1,35 @@
 /* Стили header и footer, общий стиль всех страниц */
 
-:root{
+ :root {
     --grey: rgb(216, 216, 216);
     --dark-purple: rgb(31, 0, 80);
     --light-green: rgb(0, 192, 42);
 }
+
 @font-face {
-    font-family: IBMPlexMono; 
-    src: url(../fonts/IBMPlexMono-Regular.ttf); 
+    font-family: IBMPlexMono;
+    src: url(../fonts/IBMPlexMono-Regular.ttf);
 }
+
 @font-face {
     font-family: IBMPlexMonoBold;
     src: url(../fonts/IBMPlexMono-Bold.ttf);
 }
-body{
+
+body {
     font-family: IBMPlexMono, Arial, Helvetica, sans-serif;
 }
 
-
-
-.container{
+.container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
+
+
 /* Стили header */
 
-.header{
+.header {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
@@ -38,55 +42,59 @@ body{
     font-size: 19px;
     border-radius: 10px;
     margin: 10px 30px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: inline-block;
     cursor: pointer;
 }
 
 
 /* Стили footer */
- 
-.footer{
+
+.footer {
     background-color: var(--grey);
     text-align: right;
     padding: 12px 5px;
     font-size: 18px;
     margin-top: 60px;
-
 }
 
 
 /* общие стили для страниц*/
 
-.header-text{
+.header-text {
     font-size: 40px;
     font-family: IBMPlexMonoBold;
     margin-bottom: 40px;
     padding-left: 5px;
 }
-.header-text .purple{
+
+.header-text .purple {
     color: var(--dark-purple);
 }
-.header-text .green{
+
+.header-text .green {
     color: var(--light-green);
 }
 
-.head-block-content{
+.head-block-content {
     padding-left: 65px;
     display: flex;
 }
-.text-block{
+
+.text-block {
     padding: 10px;
 }
 
-.points{
-    margin-top: 60px; 
+.points {
+    margin-top: 60px;
     padding-left: 180px;
     padding-right: 55px;
 }
+
+
 /* иконки в кружочках */
 
-.icon img{
+.icon img {
     width: 65px;
     height: 65px;
 }
@@ -95,45 +103,45 @@ body{
     padding: 22px;
 }
 
-.image.little img{
+.image.little img {
     width: 56px;
     height: 56px;
 }
-.image{
+
+.image {
     padding: 17px;
     border-radius: 50%;
 }
 
-.image.green{
+.image.green {
     background-color: rgba(0, 236, 39, 0.137);
 }
 
-.image.purple{
+.image.purple {
     background-color: rgba(90, 0, 236, 0.137);
 }
 
 
 /* Стили кнопок*/
 
-.button{
+.button {
     display: inline-block;
     padding: 10px 20px;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
 }
 
-.button.purple{
+.button.purple {
     background-color: var(--dark-purple);
 }
 
-.button.green{
+.button.green {
     background-color: var(--light-green);
 }
 
-
-.button.list::before{
+.button.list::before {
     content: "";
     height: 30px;
     width: 30px;
@@ -143,7 +151,7 @@ body{
     background-size: cover;
 }
 
-.button.letter::before{
+.button.letter::before {
     content: "";
     height: 30px;
     width: 30px;
@@ -153,7 +161,7 @@ body{
     background-size: cover;
 }
 
-.button.photo::before{
+.button.photo::before {
     content: "";
     height: 30px;
     width: 30px;
@@ -163,11 +171,64 @@ body{
     background-size: cover;
 }
 
-.button.big::before{
+.button.big::before {
     height: 55px;
     width: 55px;
-
 }
-.button-block{
+
+.button-block {
     text-align: center;
+}
+
+@media (max-width: 639px) {
+    .container {
+        padding: 0 16px;
+    }
+    .image-block {
+        display: none;
+    }
+    .head-block-content {
+        padding: 0;
+    }
+    .points {
+        padding: 0;
+    }
+    .header-text {
+        font-size: 30px;
+        font-family: IBMPlexMonoBold;
+        margin-bottom: 24px;
+        padding-left: 5px;
+    }
+    .regular-text {
+        font-size: 19px;
+        margin-bottom: 19px;
+    }
+    .icon img {
+        width: 30px;
+        height: 30px;
+    }
+    .image.little img {
+        width: 30px;
+        height: 30px;
+    }
+    .image.little {
+        padding: 17px;
+    }
+    .footer {
+        background-color: var(--grey);
+        text-align: right;
+        padding: 12px 5px;
+        font-size: 12px;
+        margin-top: 28px;
+    }
+    .button.big::before {
+        height: 27px;
+        width: 27px;
+    }
+    .logo {
+        margin: 10px 10px;
+    }
+    .header {
+        padding-left: 5px;
+    }
 }
