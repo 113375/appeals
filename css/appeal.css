@@ -92,6 +92,10 @@
     max-width: 500px;
 }
 
+.icon_button {
+    display: flex;
+}
+
 
 /*цвет текста placeholder*/
 
@@ -147,5 +151,15 @@ input::-moz-placeholder {
     }
     .img-icons-block {
         overflow-x: scroll;
+    }
+    .points-block-appeal.block-with-show {
+        display: block;
+    }
+    #choice-area-show,
+    #choice-topic-show {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 18px;
+        margin-top: 10px;
     }
 }

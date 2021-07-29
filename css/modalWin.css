@@ -84,3 +84,22 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+
+@media (max-width: 639px) {
+    .modal-win-header {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .input-block {
+        padding: 6px 0px;
+        text-align: center;
+    }
+    .modalwin {
+        max-width: 300px;
+        padding: 24px 5px;
+    }
+    .error-label {
+        font-size: 17px;
+    }
+}

@@ -30,31 +30,38 @@
         </div>
         <div class="points appeal">
             <!-- Поля для формы-->
-            <div class="points-block-appeal">
+            <div class="points-block-appeal block-with-show">
                 <!--выбор района-->
-                <div class="icon ">
-                    <div class="image purple">
-                        <img src="icons/map.png" alt="">
+                <div class="icon_button">
+                    <div class="icon ">
+                        <div class="image purple">
+                            <img src="icons/map.png" alt="">
+                        </div>
+                    </div>
+                    <div class="appeal-margin-left appeal-button appeal-button-win button purple list"
+                        type-win="choice-area" show-area-id="choice-area-show">
+                        Выбрать район
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button appeal-button-win button purple list" type-win="choice-area" show-area-id="choice-area-show">
-                    Выбрать район
+                <div class="appeal-margin-left appeal-choice-text " id="choice-area-show" input-id="choice-area-input">
                 </div>
-                <div class="appeal-margin-left appeal-choice-text " id="choice-area-show" input-id="choice-area-input">                </div>
             </div>
 
-            <div class="points-block-appeal">
-                <!-- выбор темы-->
+            <div class="points-block-appeal block-with-show">
+                <div class="icon_button">
+                    <!-- выбор темы-->
 
-                <div class="icon">
-                    <div class="image green little">
-                        <img src="icons/list.png" alt="">
+                    <div class="icon">
+                        <div class="image green little">
+                            <img src="icons/list.png" alt="">
+                        </div>
+                    </div>
+                    <div class="appeal-margin-left appeal-button button green appeal-button-win list"
+                        type-win="choice-topic" show-area-id="choice-topic-show">
+                        Выбрать тему обращения
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button green appeal-button-win list" type-win="choice-topic" show-area-id="choice-topic-show">
-                    Выбрать тему обращения
-                </div>
-                <div class="appeal-margin-left appeal-choice-text"  id="choice-topic-show" input-id="select-topic">
+                <div class="appeal-margin-left appeal-choice-text" id="choice-topic-show" input-id="select-topic">
                     <!-- То, что было выбрано-->
                 </div>
             </div>
@@ -105,9 +112,9 @@
                 </div>
                 <div class="appeal-margin-left img-icons-block">
                     <?php for($i = 0; $i < 4; $i++):?>
-                        <div class="image-block image purple">
-                            <img class="icon-img-photo" src="icons/photo.png" alt="">
-                        </div>
+                    <div class="image-block image purple">
+                        <img class="icon-img-photo" src="icons/photo.png" alt="">
+                    </div>
                     <?php endfor ?>
                 </div>
             </div>
