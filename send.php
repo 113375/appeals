@@ -57,10 +57,10 @@ function sendMessagePHPMailer($email, $inst){
             // $mail->Username = 'Логин@домен.ru';
             // $mail->Password = 'Пароль';
 
-        $mail->setFrom($email, 'Обращение');
-        $mail->addAddress($email, '');
+        $mail->setFrom($email, 'Обращение'); // от кого отправляется
+        $mail->addAddress($inst->email, ''); // кому отправляется 
         $mail->Subject = 'ОБращение с сайта obratis.com';
-        $mail->addReplyTo($email, "Для ответа");
+        $mail->addReplyTo($email, "Для ответа"); // кому должен отвечаться пользователь
         $mail->msgHTML(" ");
             // Attach uploaded files
         $mail->addAttachment("appeal.pdf");
@@ -72,9 +72,6 @@ function sendMessagePHPMailer($email, $inst){
                 $mail->addAttachment($uploadfile, $filename);
             }
         }
-        
-        
-
         $r = $mail->send();
         
     }catch(Exception $e){
@@ -86,10 +83,13 @@ $ids = array($_POST["instances"]);
 foreach($ids as $id){
     $inst = makeRequest("SELECT * FROM instance WHERE id = " . $id);
     $name = $inst[0]["title"];
-    createPDF( $name);
+    createPDF($name);
     $email = $_POST["email"];
     sendMessagePHPMailer($email, $inst);
 }
+$inst->name = "Копия пользователю";
+sendMessagePHPMailer($email, $inst); // отправляем копию пользователю
+
 
 $uploaddir = '/var/www/uploads/';
 $uploadfile = $uploaddir . basename($_FILES['file']);
