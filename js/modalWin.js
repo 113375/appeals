@@ -1,6 +1,5 @@
 // логика каждого всплывающего окна 
-let url = "http://localhost:8888/appeals/query.php"
-    // TODO на релизе надо будет поменять эту ссылку
+let url = "/query.php"
 
 
 let modalWinArea = function() {

@@ -1,9 +1,9 @@
 <?php 
 //Файл с базовыми функциями 
 $host = "localhost";
-$name = "appeals";
-$user = "root";
-$password = "root";
+$name = "u1437231_default";
+$user = "u1437231_default";
+$password = "UxXzHBVneQNL6198";
 
 $pdo = new PDO("mysql:host=$host;dbname=$name", $user, $password); // подключение к базе данных
 

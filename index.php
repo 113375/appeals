@@ -39,7 +39,6 @@
 
 
             </div>
-            <!-- TODO надо сделать оптимизацию под мобильные устройства-->
         </div>
         <div class="points">
             <div class="points-block">

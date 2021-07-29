@@ -86,8 +86,8 @@ foreach($ids as $id){
     $inst = makeRequest("SELECT * FROM instance WHERE id = " . $id);
     $name = $inst[0]["title"];
     createPDF($name);
-    // sendMessagePHPMailer($email, $inst[0]->email); 
-    // TODO раскоментировать на релизе 
+    $emailInst = $inst[0]->email;
+    sendMessagePHPMailer($email, $emailInst); 
 }
 $inst = ["email" =>  $_POST["email"]];
 createPDF("Копия пользователю");
