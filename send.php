@@ -41,7 +41,7 @@ function createPDF( $name){
     $pdf->Output('appeal.pdf', 'F'); // сохраняем обращение на сервере 
 }
 
-function sendMessagePHPMailer($email, $inst){
+function sendMessagePHPMailer($email, $emailInst){
     try{
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $mail->isSMTP();   
@@ -58,8 +58,8 @@ function sendMessagePHPMailer($email, $inst){
             // $mail->Password = 'Пароль';
 
         $mail->setFrom($email, 'Обращение'); // от кого отправляется
-        $mail->addAddress($inst->email, ''); // кому отправляется 
-        $mail->Subject = 'ОБращение с сайта obratis.com';
+        $mail->addAddress($emailInst, ' '); // кому отправляется 
+        $mail->Subject = 'Обращение с сайта obratis.com';
         $mail->addReplyTo($email, "Для ответа"); // кому должен отвечаться пользователь
         $mail->msgHTML(" ");
             // Attach uploaded files
@@ -80,16 +80,20 @@ function sendMessagePHPMailer($email, $inst){
 }
 
 $ids = array($_POST["instances"]);
+$email = $_POST["email"];
+echo $email;
 foreach($ids as $id){
     $inst = makeRequest("SELECT * FROM instance WHERE id = " . $id);
     $name = $inst[0]["title"];
     createPDF($name);
-    $email = $_POST["email"];
-    sendMessagePHPMailer($email, $inst);
+    // sendMessagePHPMailer($email, $inst[0]->email); 
+    // TODO раскоментировать на релизе 
 }
-$inst->name = "Копия пользователю";
-sendMessagePHPMailer($email, $inst); // отправляем копию пользователю
+$inst = ["email" =>  $_POST["email"]];
+createPDF("Копия пользователю");
+sendMessagePHPMailer($email, $email); // отправляем копию пользователю
 
+echo "Все отправлено, копия придет вам на почту";
 
 $uploaddir = '/var/www/uploads/';
 $uploadfile = $uploaddir . basename($_FILES['file']);
