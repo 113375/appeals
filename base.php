@@ -3,9 +3,9 @@
 $host = "localhost";
 $name = "u1437231_default";
 $user = "u1437231_default";
-$password = "UxXzHBVneQNL6198";
+$password = "kifzy0-nispum-hYnvaj";
 
-$pdo = new PDO("mysql:host=$host;dbname=$name", $user, $password); // подключение к базе данных
+$pdo = new PDO("mysql:host=$host;dbname=$name;charset=UTF8", $user, $password); // подключение к базе данных
 
 
 function makeRequest($sql){

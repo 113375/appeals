@@ -1,5 +1,5 @@
 // логика каждого всплывающего окна 
-let url = "/query.php"
+let url = "../query.php"
 
 
 let modalWinArea = function() {
