@@ -12,7 +12,7 @@ require "PHPMailer/src/SMTP.php";
 
 
 
-function createPDF( $name){
+function createPDF($name, $photo=1){
     $pdf=new FPDF();
     $pdf->SetTitle("Обращение");
     $pdf->AddPage('P');
@@ -34,7 +34,9 @@ function createPDF( $name){
     $text = $_POST["text"];
     $pdf->WRITE( 7,iconv('utf-8', 'windows-1251', $text) );
     $pdf->Cell(0, 0,iconv('utf-8', 'windows-1251',""), 0, 1, 'L' );
-    $pdf->Cell(0, 40,iconv('utf-8', 'windows-1251',"Смотрите прикреплённые файлы в письме"), 0, 1, 'L' );
+    if($photo){
+        $pdf->Cell(0, 40,iconv('utf-8', 'windows-1251',"Смотрите прикреплённые файлы в письме"), 0, 1, 'L' );
+    }
 
     $email = $_POST["email"];
     $pdf->Cell(0, 25,iconv('utf-8', 'windows-1251',"Ответ прошу направить по электронной почте: " . $email), 0, 1, 'L' );
@@ -82,16 +84,15 @@ function sendMessagePHPMailer($email, $emailInst){
 
 $ids = array($_POST["instances"]);
 $email = $_POST["email"];
-echo $email;
 foreach($ids as $id){
     $inst = makeRequest("SELECT * FROM instance WHERE id = " . $id);
     $name = $inst[0]["title"];
-    createPDF($name);
+    createPDF($name, count($_FILES['file']['tmp_name']));
     // sendMessagePHPMailer($email, $inst[0]->email); 
     // TODO раскоментировать на релизе 
 }
 $inst = ["email" =>  $_POST["email"]];
-createPDF("Копия пользователю");
+createPDF("Копия пользователю", count($_FILES['file']['tmp_name']));
 sendMessagePHPMailer($email, $email); // отправляем копию пользователю
 
 echo "Все отправлено, копия придет вам на почту";
