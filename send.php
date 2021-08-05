@@ -28,6 +28,7 @@ function createPDF( $name){
     $patronymic = $_POST["patronymic"];
     $pdf->Cell( 0, 20,iconv('utf-8', 'windows-1251',"От: $surname $namePerson $patronymic"), 0, 1, 'R' ); // от кого письмо
 
+    
     $pdf->Cell( 0, 50,iconv('utf-8', 'windows-1251',"Обращение"), 0, 1, 'C' );
 
     $text = $_POST["text"];
