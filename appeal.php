@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="appeal-margin-left appeal-button appeal-button-win button purple "
-                        type-win="choice-area" show-area-id="choice-area-show">
+                        type-win="choice-area" show-area-id="choice-area-show" default-text="Выбрать район">
                         Выбрать район
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="appeal-margin-left appeal-button button green appeal-button-win "
-                        type-win="choice-topic" show-area-id="choice-topic-show">
+                        type-win="choice-topic" show-area-id="choice-topic-show" default-text="Выбрать тему обращения">
                         Выбрать тему обращения
                     </div>
                 </div>

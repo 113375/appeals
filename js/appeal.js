@@ -14,6 +14,8 @@ let choiceAreaButton = function() {
         let modalWin = document.getElementById(modWin);
         modalWin.classList.add("visible");
 
+        let button = this
+
         let showAreaId = this.getAttribute("show-area-id")
 
         darkLayer.onclick = function() {
@@ -22,7 +24,13 @@ let choiceAreaButton = function() {
             try {
                 let showArea = document.querySelector(`#${showAreaId}`)
                 let inputId = showArea.getAttribute("input-id")
-                showArea.textContent = document.querySelector(`#${inputId}`).value
+                let defaultText = button.getAttribute("default-text")
+
+                if (document.querySelector(`#${inputId}`).value) {
+                    button.textContent = document.querySelector(`#${inputId}`).value
+                } else {
+                    button.textContent = defaultText
+                }
                 return false;
             } catch (e) {
                 console.log(e);
