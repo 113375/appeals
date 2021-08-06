@@ -38,7 +38,7 @@
                             <img src="icons/map.png" alt="">
                         </div>
                     </div>
-                    <div class="appeal-margin-left appeal-button appeal-button-win button purple list"
+                    <div class="appeal-margin-left appeal-button appeal-button-win button purple "
                         type-win="choice-area" show-area-id="choice-area-show">
                         Выбрать район
                     </div>
@@ -56,7 +56,7 @@
                             <img src="icons/list.png" alt="">
                         </div>
                     </div>
-                    <div class="appeal-margin-left appeal-button button green appeal-button-win list"
+                    <div class="appeal-margin-left appeal-button button green appeal-button-win "
                         type-win="choice-topic" show-area-id="choice-topic-show">
                         Выбрать тему обращения
                     </div>
@@ -73,7 +73,7 @@
                         <img src="icons/checkmark.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple appeal-button-win list" id="instances-button"
+                <div class="appeal-margin-left appeal-button button purple appeal-button-win " id="instances-button"
                     type-win="choice-dest">
                     Отметь адресатов
                 </div>
@@ -101,7 +101,7 @@
                         <img src="icons/photo.png" alt="">
                     </div>
                 </div>
-                <div class="appeal-margin-left appeal-button button purple photo" id="photo-add-button">
+                <div class="appeal-margin-left appeal-button button purple " id="photo-add-button">
                     Добавить фото или видео
                 </div>
             </div>
