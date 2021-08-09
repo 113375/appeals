@@ -152,9 +152,12 @@
 
 
         </div>
+        <?php $all = makeRequest("SELECT * FROM appeal");
+                $count = count($all) + 1;
+        ?>
         <div class="button-block">
             <div class="button-to-appeals button purple bottom-button letter big" id="send-button">
-                Отправить обращение
+                Отправить обращение: <?=$count?>
             </div>
         </div>
 

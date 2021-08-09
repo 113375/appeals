@@ -95,6 +95,10 @@ $inst = ["email" =>  $_POST["email"]];
 createPDF("Копия пользователю", count($_FILES['file']['tmp_name']));
 sendMessagePHPMailer($email, $email); // отправляем копию пользователю
 
+$number = count(makeRequest("SELECT * FROM appeal")) + 1;
+
+makeRequest("INSERT INTO appeal(id) VALUES ($number)");
+
 echo "Все отправлено, копия придет вам на почту";
 
 $uploaddir = '/var/www/uploads/';
