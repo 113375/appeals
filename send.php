@@ -10,9 +10,11 @@ require "PHPMailer/src/Exception.php";
 require "PHPMailer/src/PHPMailer.php";
 require "PHPMailer/src/SMTP.php";
 
+$number = count(makeRequest("SELECT * FROM appeal")) + 1;
 
 
 function createPDF($name, $photo=1){
+    global $number;
     $pdf=new FPDF();
     $pdf->SetTitle("Обращение");
     $pdf->AddPage('P');
@@ -41,10 +43,11 @@ function createPDF($name, $photo=1){
     $email = $_POST["email"];
     $pdf->Cell(0, 25,iconv('utf-8', 'windows-1251',"Ответ прошу направить по электронной почте: " . $email), 0, 1, 'L' );
 
-    $pdf->Output('appeal.pdf', 'F'); // сохраняем обращение на сервере 
+    $pdf->Output("appeal$number.pdf", 'F'); // сохраняем обращение на сервере 
 }
 
 function sendMessagePHPMailer($email, $emailInst){
+    global $number;
     try{
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $mail->isSMTP();   
@@ -66,7 +69,7 @@ function sendMessagePHPMailer($email, $emailInst){
         $mail->addReplyTo($email, "Для ответа"); // кому должен отвечаться пользователь
         $mail->msgHTML(" ");
             // Attach uploaded files
-        $mail->addAttachment("appeal.pdf");
+        $mail->addAttachment("appeal$number.pdf");
 
         for ($ct = 0; $ct < count($_FILES['file']['tmp_name']); $ct++) {
             $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['file']['name'][$ct]));
@@ -95,7 +98,6 @@ $inst = ["email" =>  $_POST["email"]];
 createPDF("Копия пользователю", count($_FILES['file']['tmp_name']));
 sendMessagePHPMailer($email, $email); // отправляем копию пользователю
 
-$number = count(makeRequest("SELECT * FROM appeal")) + 1;
 
 makeRequest("INSERT INTO appeal(id) VALUES ($number)");
 
