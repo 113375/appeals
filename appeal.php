@@ -15,8 +15,8 @@
 
 <body>
     <div class="container">
-        <?php require "templates/header.php" ?>
         <?php require "base.php" ?>
+        <?php require "templates/header.php" ?>
         <!-- Основной контент-->
         <div class="head-block-content">
             <div class="text-block">
@@ -152,9 +152,7 @@
 
 
         </div>
-        <?php $all = makeRequest("SELECT * FROM appeal");
-                $count = count($all) + 1;
-        ?>
+        
         <div class="button-block">
             <div class="button-to-appeals button purple bottom-button letter big" id="send-button">
                 Отправить обращение: <?=$count?>

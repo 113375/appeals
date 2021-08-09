@@ -14,6 +14,7 @@
 
 <body>
     <div class="container">
+        <?php require "base.php" ?>
         <?php require "templates/header.php" ?>
         <!-- Основной контент-->
         <div class="head-block-content">
